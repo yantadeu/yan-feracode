@@ -1,0 +1,78 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.yan.feracode"
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/rxjava.properties'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+    maven { url "https://jitpack.io" }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation androidXdependencies.appCompat
+    implementation androidXdependencies.material
+    implementation androidXdependencies.recyclerView
+    implementation androidXdependencies.cardView
+
+    implementation squareDependencies.retrofit
+    implementation squareDependencies.adapter_rx_java
+    implementation squareDependencies.converter_gson
+    implementation squareDependencies.picasso
+
+    implementation reactiveDependencies.rxandroid
+    implementation reactiveDependencies.rxjava
+
+    implementation elementalDependencies.butterknife
+    annotationProcessor elementalDependencies.butterknifeProcessor
+    implementation elementalDependencies.circleimageview
+
+    testImplementation testingDependencies.junit
+    testImplementation testingDependencies.mockito
+    testImplementation testingDependencies.robolectric
+
+    implementation 'com.spotify.android:auth:1.0.0-alpha'
+    implementation 'com.github.kaaes:spotify-web-api-android:0.4.1'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+}

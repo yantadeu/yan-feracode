@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+  <com.yan.feracode.spotify.view.widget.ShadowFrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/light_grey"
+      >
+
+    <LinearLayout
+        android:id="@+id/headerbar_artists"
+        style="@style/Theme.AppTheme.Music.HeaderBar"
+        >
+
+      <include layout="@layout/toolbar"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+      <com.yan.feracode.spotify.view.widget.AutoRecyclerView
+          android:id="@+id/rv_artists"
+          style="@style/Theme.AppTheme.Music.RecyclerView"
+          />
+
+      <ProgressBar
+          android:id="@+id/pv_artists"
+          style="@style/Theme.AppTheme.Music.ProgressBar"
+          />
+
+
+      <TextView
+          android:id="@+id/txt_line_artists"
+          android:text="@string/search_music_hint"
+          android:textSize="@dimen/size_title"
+          style="@style/Theme.AppTheme.Music.TextView"
+          />
+
+
+
+
+    </LinearLayout>
+
+  </com.yan.feracode.spotify.view.widget.ShadowFrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Theme.AppTheme.Spotify" parent="Base.Theme.Material.Spotify"/>
+
+  <style name="Base.Theme.Material.Spotify" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimaryDark">@color/text_primary_dark</item>
+    <item name="colorPrimary">@color/text_primary_dark</item>
+    <item name="colorAccent">@color/text_primary_dark</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowBackground">@color/background</item>
+  </style>
+
+  <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+  <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>
